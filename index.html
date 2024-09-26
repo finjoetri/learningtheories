@@ -27,13 +27,15 @@
     <h1>Learning Theorists</h1>
     <div id="currentTime"></div>
     <script>
-        function showTime() {
-            document.getElementById('currentTime').innerHTML = new Date().toUTCString();
-        }
-        showTime();
-        setInterval(function () {
-            showTime();
-        }, 1000);
+    function showTime() {
+        var londonTime = new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' });
+        document.getElementById('currentTime').innerHTML = londonTime;
+    }
+
+    showTime(); // Initial call to display the time
+    setInterval(function () {
+        showTime(); // Update the time every second
+    }, 1000);
     </script>
     <table>
         <tr>
